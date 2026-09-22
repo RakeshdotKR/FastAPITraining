@@ -1,0 +1,66 @@
+show databases
+
+show collections
+
+db.student.insertOne({name:"Rakesh",age:18,course:"Python"})
+
+db.student.insertMany([{name:"Suman",
+age:25},{name:"Anu",age:24}])
+
+db.student.find()
+
+db.student.find({age:30})
+
+db.student.updateOne(
+{ name:"Rakesh"},
+{$set:{age:30}}
+)
+
+db.student.insertMany([{name:"Raman",
+age:28,course:["JavaScript","React"]},
+{name:"Ananth",age:24,course:["Java","NodeJS"]}])
+
+db.exam.insertOne({SubjName:"Python",SubCode:"Py03"})
+
+Comparison Operator:
+eq,lt,gt,lte,gte,ne
+
+ db.student.find({age:{$gt:20}})
+
+//Logical Operators:
+$and $or $not $nor
+
+ db.student.find({$and:[ {age:{$gt:20}},
+							{course:"JavaScript"}]})
+
+ db.student.find({$or:[ {course:"Java"},
+							{course:"JavaScript"}]})
+
+db.student.find({$nor:[ {course:"Java"},
+							{course:"JavaScript"}]})
+
+//Sorting
+Ascending | Descending
+db.student.find().sort({age:1})
+db.student.find().sort({age:-1})
+
+//Limit
+db.student.find().sort({age:1}).limit(3)
+
+//Count
+db.student.countDocuments()
+db.student.countDocuments({course:"Python"})
+
+//Upsert
+db.student.updateOne(
+{name:"Ramesh"},
+{
+	$set:{age:22,course:"FastAPI"}
+},
+{upsert:true}
+)
+
+//delete
+db.student.deleteOne({name:"Ramesh"})
+//delete everything(DON'T RUN IT NOW)
+db.student.deleteMany({})
