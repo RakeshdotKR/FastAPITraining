@@ -16,3 +16,8 @@ def health():
 @app.post("/create")
 def create_something():
     return {"message":"Created"}
+
+# Path Parameters
+@app.get("/student/{usn}")
+def get_result(usn):
+    return {"Result":"Distinction","usn":usn}
