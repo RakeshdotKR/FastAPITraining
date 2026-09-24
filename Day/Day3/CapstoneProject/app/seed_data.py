@@ -1,4 +1,12 @@
 # scripts/seed_data.py
+
+# use it_servicedesk
+# db.users.deleteMany({})
+# db.categories.deleteMany({})
+# db.tickets.deleteMany({})
+# db.comments.deleteMany({})
+# db.attachments.deleteMany({})
+# db.audit_logs.deleteMany({})
 #
 # Purpose:
 #   Populates MongoDB with sample data for every entity (User, Category,
