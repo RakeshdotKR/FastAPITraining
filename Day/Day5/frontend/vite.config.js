@@ -1,6 +1,6 @@
 // vite.config.js
 // Vite build configuration. Sets up React plugin and proxies /api calls
-// to the FastAPI backend so CORS isn't an issue during development.
+// to the FastAPI backend so CORS isn't an issue during development..
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
