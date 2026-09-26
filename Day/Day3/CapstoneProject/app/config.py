@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     # Gives the app a name
     APP_NAME: str = "IT Service Desk App API"
 
+    GROQ_API_KEY: str
+    GROQ_MODEL: str
+
     # Informs pydatic-settings to load values from .env file
     model_config = SettingsConfigDict(env_file=".env",env_file_encoding="utf-8")
 
