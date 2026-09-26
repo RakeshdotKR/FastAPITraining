@@ -8,7 +8,7 @@ import CategoriesPage from './pages/CategoriesPage'
 import TicketsPage from './pages/TicketsPage'
 import TicketDetailPage from './pages/TicketDetailPage'
 import AuditLogsPage from './pages/AuditLogsPage'
-
+import ChatWidget from "./components/ChatWidget/ChatWidget"
 export default function App() {
   return (
     <BrowserRouter>
@@ -23,6 +23,8 @@ export default function App() {
           <Route path="/audit-logs" element={<AuditLogsPage />} />
         </Routes>
       </div>
+      {/* ChatWidget is a global component, not a route */} 
+      <ChatWidget />
     </BrowserRouter>
   )
 }
