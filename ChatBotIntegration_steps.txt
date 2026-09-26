@@ -1,0 +1,103 @@
+Repo: ➡️https://github.com/RakeshdotKR/FastAPITraining/commits/main/Day
+
+ChatBot Integration Backend (Commit message):
+1. Add/Modify the files in the backend folder. Copy the code from my repo.
+	
+	Day/Day3/CapstoneProject/app
+		config.py
+		main.py
+		requirements.txt
+		.env (not part of the commit, later in step 6 you'll know about it)
+	routers
+		chat.py
+
+2. Activate the virtual environment
+	windows: venv\Scripts\activate
+	Mac: source venv/bin/activate
+	Note: Ensure (venv) is displayed before the path i.e prefixed
+
+3.  Install the groq dependency:
+	Note: Ensure you've modified requirements.txt to have a line as "groq"
+	(venv) D:\Training\NIE_Mys\FastAPITraining\Day\Day3\CapstoneProject\app>
+	Run "pip install -r requirements.txt"
+	
+4. CREATE A GROQ ACCOUNT
+	Step 1:
+	Open the GroqCloud website:
+	    https://console.groq.com/
+	Step 2:
+	Create an account or sign in using your available login option.
+	Step 3:
+	After signing in, open the API Keys section:
+	    https://console.groq.com/keys
+	Step 4:
+	Create a new API key.
+
+	Give the key a meaningful name, for example:    react-fastapi-chatbot
+
+	IMPORTANT:
+	The API key is a secret credential.
+
+	Do NOT:
+	- ❌Put the key directly inside ChatWidget.jsx
+	- ❌Put the key directly inside frontend JavaScript
+	- ❌Share the key in screenshots
+	- ❌Commit the key to GitHub
+	- ❌Post the key in WhatsApp, Discord, classroom groups, etc.
+
+	✅The Groq API key must remain on the backend. Inside only .env
+
+5. COPY THE GROQ API KEY
+	After creating the API key, copy it immediately and keep it secure.
+	A Groq API key normally looks similar to:    gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+	Do not use the example above as an actual key.
+
+6. CONFIGURE THE .env FILE
+	Open: .env
+
+	Add the following lines in the end of the file:
+	GROQ_API_KEY=REPLACE_YOUR_API_KEY_HERE
+	GROQ_MODEL=openai/gpt-oss-120b
+
+	Replace the placeholder with your actual Groq API key.
+	Example:
+	GROQ_API_KEY=gsk_your_actual_key_here
+	GROQ_MODEL=openai/gpt-oss-120b
+
+	IMPORTANT:
+	❌Never put GROQ_API_KEY in the React Vite .env file with a VITE_ prefix.
+
+	✅The Groq key belongs to the FastAPI backend only.
+
+7. RUN uvicorn server:
+	python -m uvicorn app.main:app --reload
+
+	The API will be available at **http://localhost:8000**.  
+<<<<<<<<<<<< Backend integration is complete >>>>>>>>>>>>>>>>>
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ChatBot Integration Frontend (Commit message):
+1. Add/Modify the files in the frontend folder. Copy the code from my repo.
+	
+	src/App.jsx
+
+	🆕components/ChatWidget/ChatWidget.css
+	🆕components/ChatWidget/ChatWidget.jsx
+
+2. INSTALL FRONTEND DEPENDENCIES
+	The ChatWidget uses:    react-markdown and remark-gfm
+
+	Open a NEW terminal for frontend.
+	Go to the React project:
+	D:\Training\NIE_Mys\FastAPITraining\Day\Day5\frontend>
+
+	Install the required packages:    npm install react-markdown remark-gfm
+
+3. Run React project:
+	D:\Training\NIE_Mys\FastAPITraining\Day\Day5\frontend>npm run dev
+
+4. Open  http://localhost:5173/ in browser
+	Note: Ensure both frontend and backend server is running concurrently in different terminals
+
+5. In the bottom right of your screen now you should be able to see the ChatBot icon click it and explore!
